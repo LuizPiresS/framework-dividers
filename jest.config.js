@@ -1,11 +1,14 @@
-const { resolve } = require('path');
-
-const root = resolve(__dirname);
 module.exports = {
-  rootDir: root,
-  displayName: 'root-tests',
-  testMatch: ['<rootDir>/src/**/*.test.ts'],
+  roots: ['<rootDir>/tests'],
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.ts',
+    '!<rootDir>/src/main/**',
+  ],
+  coverageDirectory: 'coverage',
+  coverageProvider: 'babel',
   testEnvironment: 'node',
-  clearMocks: true,
-  preset: 'ts-jest',
+  transform: {
+    '.+\\.ts$': 'ts-jest',
+  },
+
 };
