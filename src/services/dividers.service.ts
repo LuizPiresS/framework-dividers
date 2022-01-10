@@ -1,17 +1,25 @@
 import { ResponseDividersDTO } from '../controllers/dtos/response/response-dividers.dto'
 import { DividerInterface } from '../interfaces/dividers.interface'
 import logger from '../logger'
+import { InputInternalError } from './errors/input-internal-error'
+
 export class DividersService implements DividerInterface {
   public async calculateDividers (input: number): Promise<ResponseDividersDTO> {
-    logger.info('Iniciando calculateDividers')
-    const dividers: number[] = this.dividers(input)
-    const primeDivider: number[] = this.primeDividers(dividers)
-    logger.info('Finalizando calculateDividers')
+    try {
+      logger.info('Iniciando calculateDividers')
+      const dividers: number[] = this.dividers(input)
+      const primeDivider: number[] = this.primeDividers(dividers)
+      logger.info('Finalizando calculateDividers')
 
-    return {
-      entrada: input,
-      divisores: dividers,
-      divisoresPrimos: primeDivider
+      return {
+        entrada: input,
+        divisores: dividers,
+        divisoresPrimos: primeDivider
+      }
+    } catch (error) {
+      logger.error(`Unexpected error while processing calculations: ${error}`)
+
+      throw new InputInternalError((error as Error).message)
     }
   }
 
