@@ -10,7 +10,7 @@ export class DividersController {
   @Post('')
   public async calculateDividers (req: Request, res: Response): Promise<void> {
     try {
-      logger.log(`input received: ${req.body}`)
+      logger.info(`input received: ${JSON.stringify(req.body)}`)
       res.send(await this.service.calculateDividers(+req.body.entrada)).status(200)
     } catch (error) {
       logger.error(`Something went wrong: ${error}`)
