@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node dist/src/index.js",
     "start:dev": "ts-node-dev --transpile-only src/index.ts | pino-pretty -c",
-    "test:unit": "jest -c ./",
-    "test:e2e": "jest  --runInBand",
+    "test": "jest --runInBand ",
     "prepare": "husky install"
   },
   "author": "",
