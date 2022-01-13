@@ -32,15 +32,11 @@ docker-compose up
 
 ## Test
 
-### [Swagger](http://localhost:3000/api/#/)
-
 ```bash
 
-# unit tests
-$ npm run test:unit
+# run tests
+$ npm run test
 
-# e2e tests
-$ npm run test:e2e
 
 ```
 
