@@ -27,6 +27,15 @@ REST API para calculo dos dividendos de um dado número e se os mesmos são núm
 
 ```bash
 docker-compose up
+request:
+POST /dividers HTTP/1.1
+Content-Type: application/json
+Host: localhost:3000
+Content-Length: 21
+
+{
+	"entrada": "333"
+}
 
 ```
 
