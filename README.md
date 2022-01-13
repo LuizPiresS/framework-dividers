@@ -32,8 +32,6 @@ docker-compose up
 
 ## Test
 
-### [Swagger](http://localhost:3000/api/#/)
-
 ```bash
 
 # unit tests
