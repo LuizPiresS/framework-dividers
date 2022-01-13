@@ -13,7 +13,5 @@ services:
       - api-logs:/usr/src/node-api/logs:rw
     environment:
       - NODE_ENV=development
-    depends_on:
-      - pgsql
 volumes:
   api-logs: null
