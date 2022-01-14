@@ -26,6 +26,7 @@ REST API para calculo dos dividendos de um dado número e se os mesmos são núm
 ## Running the app
 
 ```bash
+rename  .env.example para .env
 docker-compose up
 request:
 POST /dividers HTTP/1.1
