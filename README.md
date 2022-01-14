@@ -38,6 +38,7 @@ Content-Length: 21
 	"entrada": "333"
 }
 
+url: http://localhost:3000/dividers
 ```
 
 ## Test
